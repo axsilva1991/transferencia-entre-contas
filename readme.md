@@ -10,12 +10,13 @@ Instalando dependencias e inciando o server localmente.
 ```sh
 $ cd ./transferencia-entre-contas/
 $ mvn install
-$ mvn run build
+$ mvn mvn spring-boot:run
 ```
 ### Executando testes de unidade
-Após a instalação do aplicativo realize a execução dos comandos abaixo:
+Após a instalação do aplicativo realize a execução dos comandos abaixo ou importe no seu compilador de preferência:
 ```sh
 $ mvn run test
+
 ```
 ### TODO
  - Escrever Dominio
