@@ -26,4 +26,13 @@ public class Cliente implements Serializable{
 	private void setCodigoCliente(long codigoCliente) {
 		this.codigoCliente = codigoCliente;
 	}
+	/**
+	 * Método responsável por realizar transferencia entre duas contas <br>
+	 * @return bolean
+	 * <br>retorno true = transferencia realizada com sucesso. <br>
+	 * retorno false = erro ao realizar transferencia.
+	 */
+	public boolean transferencia() {
+		return false;
+	}
 }
