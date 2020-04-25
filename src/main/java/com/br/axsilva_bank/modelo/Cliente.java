@@ -1,6 +1,4 @@
-/**
- * 
- */
+
 package com.br.axsilva_bank.modelo;
 
 import java.io.Serializable;
@@ -22,6 +20,10 @@ public class Cliente implements Serializable{
 	 */
 	public Cliente(String nome) {
 		this.nome = nome;
+		setCodigoCliente(codigoCliente);
+	}
+	
+	private void setCodigoCliente(long codigoCliente) {
 		this.codigoCliente = codigoCliente;
 	}
 }

@@ -40,7 +40,7 @@ public class Conta implements Serializable {
 	 */
 	private void setAgencia(long agencia) {
 		if (agencia < 1) {
-			System.out.println("o valor da agencia nao pode ser menor que 1.");
+			System.err.println("o valor da agencia nao pode ser menor que 1.");
 			return;
 		}
 		this.agencia = agencia;
