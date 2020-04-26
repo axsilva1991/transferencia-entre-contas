@@ -2,9 +2,9 @@ package com.br.axsilva_bank.modelo;
 
 import java.io.Serializable;
 
-import com.br.axsilva_bank.excecoes.ContaDestinoNaoSelecionada;
-import com.br.axsilva_bank.excecoes.SaldoInsuficenteException;
-import com.br.axsilva_bank.excecoes.ValorContaInvalido;
+import com.br.axsilva_bank.modelo.excecoes.ContaDestinoNaoSelecionada;
+import com.br.axsilva_bank.modelo.excecoes.SaldoInsuficenteException;
+import com.br.axsilva_bank.modelo.excecoes.ValorContaInvalido;
 
 /**
  * Classe responsável por representar uma conta do banco axisilva.
@@ -43,11 +43,11 @@ public class Conta implements Serializable {
 	 * valores negativos.
 	 * 
 	 * @param agencia
+	 * @throws ValorContaInvalido 
 	 */
-	private void setAgencia(long agencia) {
+	private void setAgencia(long agencia) throws ValorContaInvalido {
 		if (agencia < 1) {
-			System.err.println("o valor da agencia nao pode ser menor que 1.");
-			return;
+			throw new ValorContaInvalido("Código da agencia invalido.");
 		}
 		this.agencia = agencia;
 	}
@@ -62,7 +62,7 @@ public class Conta implements Serializable {
 	 */
 	private void setConta(long conta) throws ValorContaInvalido {
 		if (conta < 1)
-			throw new ValorContaInvalido("Código da conta invalido");
+			throw new ValorContaInvalido("Código da conta invalido.");
 		this.conta = conta;
 	}
 
