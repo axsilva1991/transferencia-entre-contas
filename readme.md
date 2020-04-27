@@ -20,8 +20,11 @@ $ mvn run test
 ```
 ### TODO
  ~~- Escrever Dominio Cliente e Conta ~~
+ 
  ~~- Construir testes de Unidade ~~
+ 
  ~~- Ajustar Documentação subir para o repositório remoto~~
+ 
  - Implementar criaçao de contas.
  - Melhorar testes de Unidade.
  - Melhorar o JavaDoc.
