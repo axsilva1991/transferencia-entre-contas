@@ -5,7 +5,6 @@ import java.io.Serializable;
 import com.br.axsilva_bank.excecoes.TransferenciaDefautlException;
 import com.br.axsilva_bank.excecoes.ValorInvalidoException;
 
-// TODO: Auto-generated Javadoc
 /**
  * Classe responsável por representar uma conta do banco axisilva.
  * 
@@ -15,19 +14,14 @@ import com.br.axsilva_bank.excecoes.ValorInvalidoException;
  */
 public class Conta implements Serializable {
 
-	/** The Constant serialVersionUID. */
 	private static final long serialVersionUID = 1L;
 	
-	/** The saldo. */
 	private double saldo;
 	
-	/** The agencia. */
 	private long agencia;
 	
-	/** The conta. */
 	private long conta;
 	
-	/** The tutular. */
 	private Cliente tutular;
 
 	/**
@@ -58,28 +52,19 @@ public class Conta implements Serializable {
 		this.agencia = agencia;
 	}
 
-	/**
-	 * Sets the conta.
-	 *
-	 * @param conta the new conta
-	 */
 	public void setConta(long conta) {
 		this.conta = conta;
 	}
 
-	/**
-	 * Sets the tutular.
-	 *
-	 * @param tutular the new tutular
-	 */
+
 	private void setTutular(Cliente tutular) {
 		this.tutular = tutular;
 	}
 
 	/**
-	 * Deposita.
+	 * Método responsável por depositar o valor.
 	 *
-	 * @param valor the valor
+	 * @param recebe um valor como entrada.
 	 */
 	public void deposita(double valor) {
 		this.saldo += valor;
@@ -87,10 +72,12 @@ public class Conta implements Serializable {
 	}
 
 	/**
-	 * Saca.
+	 * Método responsável por realizar o saque e verificar se 
+	 * o saldo é suficiente para realização da transação.
 	 *
-	 * @param valor the valor
-	 * @throws TransferenciaDefautlException the transferencia defautl exception
+	 * @param Recebe como parametro um valor.
+	 * @throws TransferenciaDefautlException caso o saldo seja 
+	 * inferior ao saque este método retorna uma exceção.
 	 */
 	private void saca(double valor) throws TransferenciaDefautlException {
 		if (this.saldo < valor)
@@ -108,12 +95,12 @@ public class Conta implements Serializable {
 	}
 
 	/**
-	 * Transferencia.
-	 *
-	 * @param valor the valor
-	 * @param destino the destino
-	 * @return true, if successful
-	 * @throws TransferenciaDefautlException the transferencia defautl exception
+	 * Método responsável por realizar a transferência entre dias contas.<br>
+	 * recebe um valor e uma conta destino 
+	 * @param valor
+	 * @param destino 
+	 * @return true quando a transferencia for realizada.
+	 * @throws TransferenciaDefautlException Caso contrário retorna uma exceção com o mótivo do erro.
 	 */
 	public boolean transferencia(double valor, Conta destino) throws TransferenciaDefautlException {
 

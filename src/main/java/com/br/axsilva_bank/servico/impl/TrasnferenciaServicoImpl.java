@@ -9,9 +9,9 @@ import com.br.axsilva_bank.modelo.Cliente;
 import com.br.axsilva_bank.modelo.Conta;
 import com.br.axsilva_bank.servico.TrasnferenciaServico;
 
-// TODO: Auto-generated Javadoc
 /**
- * The Class TrasnferenciaServicoImpl.
+ * Classe responsável por realizar a implementação do 
+ * serviço de transferencia de valores entre 2 contas.
  *
  * @author Anderson Xavier
  * @version 1.0.0
@@ -24,26 +24,23 @@ public class TrasnferenciaServicoImpl implements TrasnferenciaServico {
 	 * contas será expandido para toda a rede
 	 */
 
-	/** The agencia. */
 	private long agencia = 1;
 	
-	/** The conta origem. */
 	Conta contaOrigem;
 	
-	/** The conta destino. */
 	Conta contaDestino;
 	
 	/**
-	 * Transferir valor para.
-	 *
-	 * @param codigoContaOrigem the codigo conta origem
-	 * @param codigoContaDestino the codigo conta destino
-	 * @param valor the valor
-	 * @return true, if successful
-	 * @throws TransferenciaDefautlException the transferencia defautl exception
+	 * Responsável por realizar a implementação do 
+	 * serviço de transferencia de valores entre 2 contas.
+	 * @param codigoContaOrigem Código da conta Origem
+	 * @param codigoContaDestino Código conta destino
+	 * @param valor valor financeiro da transação
+	 * @return true, quando a transação for efetuada com sucesso.
+	 * @throws TransferenciaDefautlException Exceção que pode ser retornada caso a transação tenha problemas ou erros.
 	 */
 	@Override
-	public boolean transferirValorPara(String codigoContaOrigem, String codigoContaDestino, double valor)
+	public boolean transferirPara(String codigoContaOrigem, String codigoContaDestino, double valor)
 			throws TransferenciaDefautlException {
 		/*
 		 * Criação está das contas estão sendo feitas manulamente devido a ausencia de um detalhamento de regra.
@@ -57,11 +54,11 @@ public class TrasnferenciaServicoImpl implements TrasnferenciaServico {
 	}
 
 	/**
-	 * Verificar conta.
+	 * Verificar conta, método responsavel por verificar se as contas são validas.
 	 *
-	 * @param codigoContaOrigem the codigo conta origem
-	 * @param codigoContaDestino the codigo conta destino
-	 * @return true, if successful
+	 * @param codigoContaOrigem 
+	 * @param codigoContaDestino 
+	 * @return true quando as contas forem validas.
 	 */
 	private boolean verificarConta(String codigoContaOrigem, String codigoContaDestino) {
 		if (codigoContaOrigem == null || codigoContaOrigem.equals(""))

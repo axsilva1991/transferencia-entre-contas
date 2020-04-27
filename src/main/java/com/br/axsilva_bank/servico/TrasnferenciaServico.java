@@ -11,7 +11,7 @@ import com.br.axsilva_bank.excecoes.TransferenciaDefautlException;
 public interface TrasnferenciaServico {
 	
 	/**
-	 * Transferir valor para.
+	 * Transferir para.
 	 *
 	 * @param codigoContaOrigem the codigo conta origem
 	 * @param codigoContaDestino the codigo conta destino
@@ -19,5 +19,7 @@ public interface TrasnferenciaServico {
 	 * @return true, if successful
 	 * @throws TransferenciaDefautlException the transferencia defautl exception
 	 */
-	public boolean transferirValorPara(String codigoContaOrigem, String codigoContaDestino, double valor) throws TransferenciaDefautlException;
+
+	boolean transferirPara(String codigoContaOrigem, String codigoContaDestino, double valor)
+			throws TransferenciaDefautlException;
 }
